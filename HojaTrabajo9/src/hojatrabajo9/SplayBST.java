@@ -6,8 +6,13 @@
 package hojatrabajo9;
 
 /**
+ * Algoritmo obtenido de https://algs4.cs.princeton.edu/33balanced/SplayBST.java.html
+*/
+
+/**
  *
- * @author alber
+ * @author Andres Urizar
+ * @author Rodrrigo Morales
  */
 public class SplayBST<Key extends Comparable<Key>,Value extends Comparable<Value>>  {
 

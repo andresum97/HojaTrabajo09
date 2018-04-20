@@ -4,11 +4,16 @@
  * and open the template in the editor.
  */
 package hojatrabajo9;
+/**
+ * Algoritmo obtenido de https://algs4.cs.princeton.edu/33balanced/SplayBST.java.html
+*/
+
 
 
 /**
  *
- * @author alber
+ * @author Andres Urizar
+ * @author Rodrigo Morales
  */
 import java.util.ArrayList;
 import java.util.List;
