@@ -8,6 +8,7 @@ package hojatrabajo9;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.Scanner;
 //import java.lang.Object.structure5.*;
 
 /**
@@ -21,6 +22,18 @@ public class HojaTrabajo9 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        boolean x = true;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Bienvenido a nuestro diccionario");
+        while(x){
+        System.out.println("Escoja la forma de guardar el diccionario");
+        System.out.println("1.Splay Tree\n 2.Red Black Tree");
+        int op = sc.nextInt();
+        if(op==1){
+           // SplayBST<Asociacion<String,String>> arbol = new SplayBST<>();
+        }
+        
+        }
         
          File f;
         FileReader fr;
