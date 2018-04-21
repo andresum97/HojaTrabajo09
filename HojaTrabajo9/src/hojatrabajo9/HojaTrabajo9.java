@@ -8,6 +8,7 @@ package hojatrabajo9;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Scanner;
 //import java.lang.Object.structure5.*;
 
@@ -23,6 +24,7 @@ public class HojaTrabajo9 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        ArrayList<String> mensajeTraducido = new ArrayList<String>();
         boolean x = true;
         Scanner sc = new Scanner(System.in);
         int opcion=0;
@@ -87,11 +89,13 @@ public class HojaTrabajo9 {
                                valor = segunda;
                            }
                        }
-                       System.out.println(llave+","+valor); //Dependiendo de la opcion elegida ingresa el diccionario
+                       //System.out.println(llave+","+valor); //Dependiendo de la opcion elegida ingresa el diccionario
                        if(opcion==1){
                            arbol1.put(llave, valor);
+                           System.out.println(llave+","+valor+" INGRESADO"); 
                        }else{
                            arbol2.put(llave, valor);
+                           System.out.println(llave+","+valor+" INGRESADO"); 
                        }       
                    }
                }
@@ -106,7 +110,40 @@ public class HojaTrabajo9 {
            while((linea2= br.readLine())!= null){
                linea2 = linea2.replaceAll("[()]", ""); //Para quitar los parentesis de la linea
                System.out.println(linea2);
+               String word = "";
+               String s = "";
+               for (int i=0; i<linea2.length();i++){
+                  if ((!" ".equals(linea2.substring(i, i+1))) 
+                          && (!".".equals(linea2.substring(i, i+1)))){
+                    word = word + linea2.substring(i, i+1); 
+                  } else {
+                       if(opcion==1){
+                           if (arbol1.contains(word.toUpperCase())){
+                                s = arbol1.get(word.toUpperCase());
+                                mensajeTraducido.add(s);
+                           } else{
+                               mensajeTraducido.add(word);
+                           }
+                       }else{
+                        if (arbol2.contains(word.toUpperCase())){
+                          s=  arbol2.get(word.toUpperCase());
+                          mensajeTraducido.add(s);
+                        }else {
+                            mensajeTraducido.add(word);
+                        }
+                       }
+                      
+                      word ="";
+                  }
+               }
+               
+               linea2 ="";
+           for (int i=0;i<mensajeTraducido.size();i++){
+               linea2 = linea2 +" "+mensajeTraducido.get(i);
            }
+               System.out.println(linea2);         
+           }
+           
            br.close();
            fr.close();
         }catch(Exception e){
